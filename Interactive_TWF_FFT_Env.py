@@ -41,7 +41,7 @@ ax1.set_title('Time waveform')
 fft_y=abs(np.fft.rfft(x))*2/len(x)
 freq=np.fft.rfftfreq(len(x), 1/(fs))
 
-#create plot spectrum
+#create spectrum plot 
 spectrum, = ax2.plot(freq, fft_y)
 ax2.set_ylim(0, 10)
 ax2.set_xlim(0, 2000)
@@ -70,7 +70,6 @@ def env_sp(twf, fs, low_f, high_f):
 
 
 # Envelope plot
-
 
 fmin = 500
 fmax = 1000
@@ -111,15 +110,14 @@ frequency_4 = Slider(axfreq_4, 'Frequency 4', 0.0, 2000, 0, valstep=10)
 frequency_5 = Slider(axfreq_5, 'Frequency 5', 0.0, 2000, 0, valstep=10)
 
  
-# Create a slider from 0.0 to 10.0 in axes axfreq
-# with 5 as initial value and valsteps of 1.0
+# Create sliders for amplitudes
 amplitude_1 = Slider(axamplitude_1, 'Amplitude 1', 0.0, 10.0, 5, valstep=1.0)
 amplitude_2 = Slider(axamplitude_2, 'Amplitude 2', 0.0, 10.0, 0, valstep=1.0)
 amplitude_3 = Slider(axamplitude_3, 'Amplitude 3', 0.0, 10.0, 0, valstep=1.0)
 amplitude_4 = Slider(axamplitude_4, 'Amplitude 4', 0.0, 10.0, 0, valstep=1.0)
 amplitude_5 = Slider(axamplitude_5, 'Amplitude 5', 0.0, 10.0, 0, valstep=1.0)
 
-# Create a slider for phase
+# Create sliders for phase
 phase_1 = Slider(axphase_1, 'Phase 1',-180, 180, 0, valstep=10)
 phase_2 = Slider(axphase_2, 'Phase 2',-180, 180, 0, valstep=10)
 phase_3 = Slider(axphase_3, 'Phase 3',-180, 180, 0, valstep=10)
